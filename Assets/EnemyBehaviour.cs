@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    float enemySpeed = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,17 +20,30 @@ public class EnemyBehaviour : MonoBehaviour
          * Kod för att åka ner
          * Kod för när vi ska byta håll (kanske en timer)
          */
-
-        if (transform.position.y <= 5)
-        {
-            transform.position += Time.deltaTime * transform.up * 1;
-        }
-        if (transform.position.y >= 5)
-        {
-            transform.position = new Vector3 (-1, -5, 0);
-        }
+      
+        
+        
+     transform.position += Time.deltaTime * transform.up * enemySpeed;
+        
+        
 
         
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Wall")
+        {
+            transform.position = new Vector3(transform.position.x, -15, 0);
+        }
+    }
+    
+
+
+
+
+
+
+
 }
+
