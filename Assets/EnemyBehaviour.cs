@@ -19,7 +19,11 @@ public class EnemyBehaviour : MonoBehaviour
          * Kod för när vi ska byta håll (kanske en timer)
          */
 
-        transform.position += new Vector3(3, 0, 0);
+        if(0==0)
+        {
+            transform.position += new Vector3(3, 0, 0);
+        }
+        
 
     }
 }
