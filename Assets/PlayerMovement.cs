@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
     [SerializeField]
     Rigidbody2D rb;
     [SerializeField]
@@ -67,8 +68,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Wall");
-        inAir = false;
+        if (collision.tag == "Wall")
+        {
+            inAir = false;
+        }
+
+
 
     }
 }
