@@ -33,7 +33,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Wall")
+        if (collision.tag == "Wall") 
         {
             transform.position = new Vector3(transform.position.x, -15, 0); 
         }
