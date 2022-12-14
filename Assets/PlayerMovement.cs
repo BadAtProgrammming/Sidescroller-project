@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+    public GameObject player;
+
     [SerializeField]
     Rigidbody2D rb;
     [SerializeField]
@@ -68,9 +69,10 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Wall")
+        if (collision.gameObject.tag == "Wall")
         {
             inAir = false;
+            player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
 
 

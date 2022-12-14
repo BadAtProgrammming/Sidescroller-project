@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      if (collision.tag == "Enemy");
+      if (collision.tag == "Enemy")
         {
             HitPoints -= 1;
         }

@@ -107,7 +107,7 @@ MonoBehaviour:
   right: 100
   left: 97
   inAir: 0
-  jumpHeight: 10
+  jumpHeight: 5
 --- !u!50 &3579233597363286215
 Rigidbody2D:
   serializedVersion: 4
