@@ -36,6 +36,8 @@ public class EnemyBehaviour : MonoBehaviour
         if (collision.tag == "Wall") 
         {
             transform.position = new Vector3(transform.position.x, -15, 0); 
+
+            
         }
     }
     
