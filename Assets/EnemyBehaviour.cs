@@ -27,7 +27,7 @@ public class EnemyBehaviour : MonoBehaviour
      transform.position += Time.deltaTime * transform.up * enemySpeed;
         
         
-
+        
         
 
     }
@@ -35,7 +35,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (collision.tag == "Wall")
         {
-            transform.position = new Vector3(transform.position.x, -15, 0);
+            transform.position = new Vector3(transform.position.x, -15, 0); 
         }
     }
     
