@@ -8,6 +8,9 @@ public class EnemyBehaviour : MonoBehaviour
     float enemySpeed = 5;
     [SerializeField, Range(-100, 100)]
     float TeleportY = -15;
+    [SerializeField]
+    float HitPoints;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +30,13 @@ public class EnemyBehaviour : MonoBehaviour
         
         
      transform.position += Time.deltaTime * transform.up * enemySpeed;
-        
-        
-        
-        
+
+        if (HitPoints < 0)
+        {
+            Destroy(this.gameObject);
+        }
+
+
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,11 +49,11 @@ public class EnemyBehaviour : MonoBehaviour
         }
         if (collision.tag == "Bullet")
         {
-            Destroy(this.gameObject);
+            HitPoints -= 1;
         }
 
 
-    
+
     }
 
     
