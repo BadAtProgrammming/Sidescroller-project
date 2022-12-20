@@ -6,6 +6,8 @@ public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField, Range(0.1f, 100)]
     float enemySpeed = 5;
+    [SerializeField, Range(-100, 100)]
+    float TeleportY = -15;
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +37,19 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (collision.tag == "Wall") 
         {
-            transform.position = new Vector3(transform.position.x, -15, 0); 
+            transform.position = new Vector3(transform.position.x, -TeleportY, 0); 
 
         
         }
+        if (collision.tag == "Bullet")
+        {
+            Destroy(this.gameObject);
+        }
+
+
+    
     }
+
     
 
 

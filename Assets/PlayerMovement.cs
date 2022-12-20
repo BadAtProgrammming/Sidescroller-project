@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetKey(KeyCode.Space)&&inAir== false)
+        if(Input.GetKey(KeyCode.Backspace)&&inAir== false)
         {
             rb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             inAir = true;
